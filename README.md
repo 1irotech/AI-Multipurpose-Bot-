@@ -8,3 +8,6 @@
 - BeautyfullSoup - library that is used for summarization
 - PyTelegramBotAPI - library for creating telegram bots
 - FusionBrain API - api key for generating images and videos
+
+## Features
+- 
