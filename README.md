@@ -11,3 +11,8 @@
 
 ## Features
 - 
+
+## Usage
+- /start or /help - starting a bot and showing all available commands
+- /generate <promot> - generating an image
+- 
