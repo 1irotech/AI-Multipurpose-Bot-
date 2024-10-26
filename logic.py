@@ -5,6 +5,7 @@ from PIL import Image
 from io import BytesIO
 import base64
 import os
+import telebot
 from config import SECRET_KEY, API_KEY
 
 
@@ -22,16 +23,19 @@ class Text2ImageAPI:
         data = response.json()
         return data[0]['id']
 
-    def generate(self, prompt, model, images=1, width=1024, height=1024):
+    def generate(self, prompt, model, images=1, width=1024, height=1024, style=None):
         params = {
             "type": "GENERATE",
             "numImages": images,
             "width": width,
             "height": height,
             "generateParams": {
-                "query": f"{prompt}"
+                "query": f"{prompt}",
+                "style": style
             }
         }
+        if style is None:
+            style = "DEFAULT" 
 
         data = {
             'model_id': (None, model),
